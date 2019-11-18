@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int n,n1,a,b,x;
+	cout << "Введите размер массива А: ";
+	cin >> n;
+	cout << "Введите элементы массива А: ";
+	int* m = new int[n];
+	for (int i = 0; i < n; i++) {
+		cin >> m[i];
+	}
+	for (int i = 0; i < n; i += 2) {
+		cout << m[i] << "\t";
+	}	
+	if (n % 2 == 1) {
+		n -= 1;
+	}
+	for (int i = n+1; i-2 >= 0; i -= 2) {
+		cout << m[i-2] << "\t";
+	}
+	cout << endl;
+	delete[] m;
+}
