@@ -1,1 +1,26 @@
+#include <iostream>
+using namespace std;
 
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int n,a,b,x;
+	cout << "Введите целое число N (> 2): ";
+	cin >> n;
+	cout << "Введите первый член А: ";
+	cin >> a;
+	cout << "Введите второй член B: ";
+	cin >> b;
+	int* m = new int[n];
+	m[0] = a;
+	m[1] = b;
+	cout << m[0] << "\t"<< m[1]<< "\t";
+	x = a + b;
+	for (int i = 1; i < n; i++) {
+		m[i] = x;
+		cout << m[i] << "\t";
+		x *= 2;
+	}
+	cout << endl;
+	delete[] m;
+}
